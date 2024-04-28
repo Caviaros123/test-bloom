@@ -3,8 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
-  min-height: 100vh;
+  padding: 2rem;
 }
 
 .description {
@@ -227,4 +226,29 @@
   to {
     transform: rotate(0deg);
   }
+}
+
+.mainCard{
+  background-color: #fff;
+  border-radius: 30px;
+  padding: 20px;
+  margin: 20px;
+  height: 100%;
+}
+
+.titleColor{
+  color:red;
+}
+
+.mainBanner{
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+}
+
+.mainBanner img {
+  width: 100%!important;
 }
