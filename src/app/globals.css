@@ -1,4 +1,6 @@
 :root {
+  --primaryColor: #1e7366;
+  --secondaryColor: #f2f2f2;
   --max-width: 1100px;
   --border-radius: 12px;
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
@@ -16,10 +18,6 @@
     #54d6ff33 120deg,
     #0071ff33 160deg,
     transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
   );
 
   --tile-start-rgb: 239, 245, 249;
@@ -85,14 +83,17 @@ body {
   overflow-x: hidden;
 }
 
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  opacity: 0.8;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, var(--primaryColor), #fff 50%, #59f7df);
 }
 
 a {
@@ -102,6 +103,17 @@ a {
 
 @media (prefers-color-scheme: dark) {
   html {
-    color-scheme: dark;
+    color-scheme: auto;
   }
+}
+
+.container {
+  width: 100%;
+  gap: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  align-items: center;
 }

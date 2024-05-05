@@ -1,0 +1,51 @@
+.groupInput {
+  display: flex;
+  gap: 0;
+  border-radius: 30px;
+  padding: 0;
+  margin: 0;
+  height: 50px;
+}
+
+.inputItem1,
+.inputItem2 {
+  flex: 2;
+  height: 100%;
+  border: none;
+  padding: 0 10px;
+  background-color: transparent;
+  border: grey solid 1px;
+  opacity: 0.5;
+}
+
+.inputItem1 {
+  flex-grow: 2;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-right-color: #3ac2ae;
+  border: #666 solid 1px;
+}
+
+.inputItem2 {
+  flex-grow: 1.5;
+  border: #666 solid 1px;
+  border-radius: 0%;
+  border-left-width: 0;
+  border-right: none;
+}
+
+.groupInput button {
+  flex: 1;
+  flex-grow: 0.8;
+  background-color: #3ac2ae;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-left: 0;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.form{
+  padding-top: 30px;
+}

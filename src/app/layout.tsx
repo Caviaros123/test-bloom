@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "../dotenv";
 import "./globals.css";
 // core styles are required for all packages
-import '@mantine/core/styles.css';
 import { ColorSchemeScript } from "@mantine/core";
+import '@mantine/core/styles.css';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <head className={inter.className}>
         <meta name="description" content={metadata.description?.toString()} />
         <link rel="icon" href="/favicon.ico" />
@@ -30,7 +31,9 @@ export default function RootLayout({
 
         <ColorSchemeScript />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+          {children}
+      </body>
     </html>
   );
 }

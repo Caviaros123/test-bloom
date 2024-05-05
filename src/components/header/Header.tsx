@@ -4,26 +4,30 @@ import { Burger, Group } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 
 import { BloomLogo } from '@/Icons/BloomLogo';
+import { IconBell } from '@tabler/icons-react';
+import Link from 'next/link';
 import { RoundedButton } from '../buttons/RoundedButtton';
 import classes from './Header.module.css';
 
 interface LinkProps {
   label: string;
   link: string;
+  icon?: string;
 }
 
 export function Header({ links }: { links: LinkProps[] }) {
   const [opened, { toggle }] = useDisclosure(false);
 
   const items = links.map((link) => (
-    <a
+    <Link
       key={link.label}
       href={link.link}
       className={classes.link}
       onClick={(event) => event.preventDefault()}
     >
+      {link.icon && <IconBell />}
       {link.label}
-    </a>
+    </Link>
   ));
 
   return (
@@ -35,7 +39,7 @@ export function Header({ links }: { links: LinkProps[] }) {
         </Group>
 
         <Group>
-          <Group ml={50} gap={5} className={classes.links} visibleFrom="sm">
+          <Group ml={50} className={classes.links} visibleFrom="sm">
             {items}
           </Group>
 

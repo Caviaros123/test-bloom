@@ -2,7 +2,8 @@ module.exports = {
     plugins: {
       'postcss-preset-mantine': {
         theme: {
-            primaryColor: '#FF4785',
+            primaryColor: '#1e7366',
+            secondaryColor: '#f2f2f2',
             fontFamily: 'Arial, sans-serif',
         },
       },
