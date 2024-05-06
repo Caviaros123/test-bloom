@@ -55,12 +55,12 @@ const JobCard = ({ offer, showOffer, setLiked }: JobCardProps) => {
   return (
     <Paper onClick={showOffer} shadow="sm" p={20} radius="md" withBorder>
       <Group flex="row" justify="space-between">
-        <Text size="lg">{offer.info.title}</Text>
-        <IconHeart color="#3ac2ae" cursor={"pointer"} onClick={setLiked} />
-      </Group>
       <Text size="sm" color="dimmed">
         {offer.company.name}
       </Text>
+        <IconHeart color="#3ac2ae" cursor={"pointer"} onClick={setLiked} />
+      </Group>
+        <Text size="xl" fw={600}>{offer.info.title}</Text>
       <Group>
         <span>📍 {offer.info.city}</span>
 

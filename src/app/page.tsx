@@ -190,7 +190,7 @@ export default function Home() {
               <Text size="xl" fw={500}>
                 {offer.info.title}
               </Text>
-              <Badge color="pink">Nouveau</Badge>
+              <Badge color="#3ac2ae">Nouveau</Badge>
             </Group>
 
             <Text size="sm" c="dimmed">
@@ -201,8 +201,19 @@ export default function Home() {
               {offer.info.city} - {offer.info.postal_code}
             </Text>
 
+            <Text size="md" c="dimmed">
+              <h1>Profiles:</h1>{" "}
+              <span dangerouslySetInnerHTML={{ __html: offer.candidate.profile }} />
+            </Text>
+
             <Text size="sm" c="dimmed">
-              {offer.info.type}
+              <h1>Missions:</h1>{" "}
+              <span dangerouslySetInnerHTML={{ __html: offer.candidate.missions }} />
+            </Text>
+
+            <Text size="sm" c="dimmed" >
+              <h1>Compétences:</h1>{" "}
+              <span dangerouslySetInnerHTML={{ __html: offer.candidate.profile }} />
             </Text>
 
             <Button color="blue" fullWidth mt="md" radius="md">
@@ -314,6 +325,15 @@ export default function Home() {
                   <JobCard key={index} offer={result} showOffer={() => showOffer(result.id)} />
                 ))}
             <Pagination
+              style={
+                {
+                  display: "flex",
+                  flexDirection: "row",
+                  gap: "10px",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }
+              }
               total={30}
               siblings={1}
               defaultValue={currentPage}
